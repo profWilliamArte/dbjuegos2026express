@@ -89,8 +89,8 @@ INSERT INTO `generos` (`id`, `estatus_id`, `nombre`, `descripcion`) VALUES
 
 CREATE TABLE `juegos` (
   `id` int NOT NULL,
-  `id` int NOT NULL,
-  `id` int NOT NULL,
+  `estatus_id` int NOT NULL,
+  `genero_id` int NOT NULL,
   `nombre` varchar(200) NOT NULL,
   `descripcion` text,
   `fechapublicacion` date DEFAULT NULL,
@@ -220,8 +220,8 @@ INSERT INTO `juegos` (`id`, `estatus_id`, `genero_id`, `nombre`, `descripcion`, 
 
 CREATE TABLE `juegos_plataformas` (
   `id` int UNSIGNED NOT NULL,
-  `id` int NOT NULL,
-  `id` int NOT NULL
+  `juego_id` int NOT NULL,
+  `plataforma_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -430,7 +430,7 @@ INSERT INTO `juegos_plataformas` (`id`, `juego_id`, `plataforma_id`) VALUES
 
 CREATE TABLE `plataformas` (
   `id` int NOT NULL,
-  `id` int NOT NULL,
+  `estatus_id` int NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `descripcion` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
